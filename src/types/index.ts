@@ -39,3 +39,31 @@ export interface IOrderData {
 
 export type TProductAnswer = {total: number, items: IProduct[]};
 export type TOrderAnswer = {id: string, total: number};
+
+export interface IAppApi {
+  getProductList: () => Promise<IProduct[]>;
+  postOrder: (order: IOrder) => Promise<TOrderAnswer>;
+}
+
+export interface IModalData {
+  content: HTMLElement;
+}
+
+export interface IPage {
+  counter: number;
+  catalog: HTMLElement[];
+  locked(value: boolean): void;
+}
+
+export interface IBasket {
+  list: HTMLElement[];
+  price: number;
+}
+
+export interface ISuccess {
+  total: number;
+}
+
+export interface IId {
+  id: string;
+}
